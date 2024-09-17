@@ -45,7 +45,7 @@ export class TestProvider implements RBACProvider {
     } else if (options.schedule) {
       schedulerServiceTaskRunner = options.schedule;
     } else {
-      throw new Error('Neither schedule nor scheduler is provided.');
+      throw new Error('Neither schedule nor scheduler are provided.');
     }
 
     return new TestProvider(schedulerServiceTaskRunner, options.logger);
