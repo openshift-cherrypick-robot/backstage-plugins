@@ -78,6 +78,7 @@
   },
   "release": {
     "branches": "release-1.3",
+    "noCi": true,
     "plugins": [
       [
         "@semantic-release/commit-analyzer",
