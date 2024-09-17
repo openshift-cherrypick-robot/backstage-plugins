@@ -1,5 +1,5 @@
 /**
- * The test backend module for the rbac plugin.
+ * The test backend module for the rbac plugin
  *
  * @packageDocumentation
  */

@@ -24,7 +24,7 @@
     "prettier:check": "prettier --ignore-unknown --check .",
     "prettier:fix": "prettier --ignore-unknown --write .",
     "new": "janus-cli new --do-not-edit-packages",
-    "release": "multi-semantic-release",
+    "release": "multi-semantic-release --ignore-private-packages",
     "prepare": "husky install",
     "export-dynamic": "turbo run export-dynamic",
     "versions:bump": "backstage-cli versions:bump && find . -name 'package.json' ! -path '*/node_modules/*' -exec sed -i -e '/devDependencies/,/\\\\}/{ s/\\\"\\\\^/\\\"/; }' {} ; && yarn install && yarn run export-dynamic --no-cache -- -- --clean"
@@ -132,7 +132,7 @@
       [
         "@semantic-release/exec",
         {
-          "successCmd": "if [ -d 'dist-dynamic' ]; then echo 'publishing backend derived package ...' && cd dist-dynamic && npm pkg delete scripts && npm publish  --registry https://registry.npmjs.org/ --access public ; fi"
+          "successCmd": "if [ -d 'dist-dynamic' ]; then echo 'publishing backend derived package ...' && cd dist-dynamic && npm pkg delete scripts && npm publish  --registry https://registry.npmjs.org/ --access public --ignore-private-packages; fi"
         }
       ]
     ]
